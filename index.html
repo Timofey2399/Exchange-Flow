@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trust Bot — обмен EUR↔RUB без комиссии</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <span class="logo">Trust Bot</span>
+      <button class="lang-btn" id="langBtn">EN</button>
+    </div>
+  </header>
+
+  <!-- 1. Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+
+        <div class="hero-text">
+          <h1 data-ru="Меняйте евро на рубли без комиссии" data-en="Exchange EUR to RUB with zero fees"></h1>
+          <p class="hero-sub" data-ru="P2P-переводы через Telegram — по рыночному курсу, без банковских наценок" data-en="P2P transfers via Telegram — at market rate, no bank markups"></p>
+          <a href="https://t.me/your_bot" class="btn-primary" data-ru="Открыть в Telegram" data-en="Open in Telegram" target="_blank" rel="noopener"></a>
+        </div>
+
+        <div class="hero-visual">
+          <svg viewBox="0 0 260 520" xmlns="http://www.w3.org/2000/svg">
+            <!-- Phone shell -->
+            <rect width="260" height="520" rx="38" fill="#1C1C1E"/>
+            <!-- Screen -->
+            <rect x="7" y="7" width="246" height="506" rx="31" fill="#ffffff"/>
+            <!-- Dynamic island -->
+            <rect x="95" y="15" width="70" height="22" rx="11" fill="#1C1C1E"/>
+            <!-- Time -->
+            <text x="22" y="34" font-size="12" font-weight="700" font-family="system-ui,sans-serif" fill="#1C1C1E">9:41</text>
+            <!-- Header dividers -->
+            <line x1="7" y1="46" x2="253" y2="46" stroke="#E5E5EA" stroke-width="0.5"/>
+            <!-- Back arrow -->
+            <text x="16" y="68" font-size="24" font-family="system-ui,sans-serif" fill="#007AFF">‹</text>
+            <!-- Avatar -->
+            <circle cx="56" cy="60" r="15" fill="#CFB1F2"/>
+            <text x="56" y="65" text-anchor="middle" font-size="11" font-weight="700" font-family="system-ui,sans-serif" fill="#1C1C1E">TB</text>
+            <!-- Bot name + status -->
+            <text x="78" y="57" font-size="13" font-weight="600" font-family="system-ui,sans-serif" fill="#1C1C1E">Trust Bot</text>
+            <text x="78" y="72" font-size="10" font-family="system-ui,sans-serif" fill="#34C759">● online</text>
+            <line x1="7" y1="79" x2="253" y2="79" stroke="#E5E5EA" stroke-width="0.5"/>
+
+            <!-- MSG 1: Bot -->
+            <rect x="14" y="87" width="152" height="34" rx="14" fill="#F0E9FC"/>
+            <text x="24" y="102" font-size="11" font-family="system-ui,sans-serif" fill="#1C1C1E">Сколько обменяем? 👋</text>
+            <text x="24" y="115" font-size="9" font-family="system-ui,sans-serif" fill="#8E8E93">14:03</text>
+
+            <!-- MSG 2: User -->
+            <rect x="80" y="131" width="152" height="28" rx="14" fill="#CFB1F2"/>
+            <text x="90" y="150" font-size="11" font-family="system-ui,sans-serif" fill="#1C1C1E">200 EUR → RUB 💶</text>
+
+            <!-- MSG 3: Bot — result card -->
+            <rect x="14" y="169" width="176" height="76" rx="14" fill="#F0E9FC"/>
+            <text x="24" y="186" font-size="10" font-family="system-ui,sans-serif" fill="#8E8E93">Вы получите:</text>
+            <text x="24" y="210" font-size="24" font-weight="800" font-family="system-ui,sans-serif" fill="#1C1C1E">17 682 ₽</text>
+            <rect x="24" y="216" width="96" height="18" rx="6" fill="#D1FAE5"/>
+            <text x="32" y="229" font-size="10" font-family="system-ui,sans-serif" fill="#059669">✓ Без комиссии</text>
+
+            <!-- MSG 4: User -->
+            <rect x="82" y="255" width="142" height="28" rx="14" fill="#CFB1F2"/>
+            <text x="92" y="274" font-size="11" font-family="system-ui,sans-serif" fill="#1C1C1E">✅ Перевёл, готово!</text>
+
+            <!-- MSG 5: Bot -->
+            <rect x="14" y="293" width="184" height="44" rx="14" fill="#F0E9FC"/>
+            <text x="24" y="310" font-size="11" font-family="system-ui,sans-serif" fill="#1C1C1E">⚡ Принято! Деньги придут</text>
+            <text x="24" y="328" font-size="11" font-family="system-ui,sans-serif" fill="#1C1C1E">в течение 5 минут</text>
+            <text x="208" y="342" font-size="9" font-family="system-ui,sans-serif" fill="#8E8E93">14:04</text>
+
+            <!-- Completed badge -->
+            <rect x="74" y="352" width="112" height="20" rx="10" fill="#F0E9FC"/>
+            <text x="130" y="366" text-anchor="middle" font-size="9" font-family="system-ui,sans-serif" fill="#7C5DAF">Обмен завершён ✓</text>
+
+            <!-- Input area -->
+            <rect x="7" y="436" width="246" height="40" fill="#F2F2F7"/>
+            <rect x="7" y="470" width="246" height="43" rx="31" fill="#F2F2F7"/>
+            <rect x="14" y="441" width="194" height="34" rx="17" fill="#fff" stroke="#E5E5EA" stroke-width="1"/>
+            <text x="30" y="463" font-size="12" font-family="system-ui,sans-serif" fill="#C7C7CC">Сообщение...</text>
+            <circle cx="232" cy="458" r="15" fill="#CFB1F2"/>
+            <text x="232" y="464" text-anchor="middle" font-size="16" font-family="system-ui,sans-serif" fill="#1C1C1E">↑</text>
+
+            <!-- Home indicator -->
+            <rect x="98" y="500" width="64" height="4" rx="2" fill="#1C1C1E" opacity="0.2"/>
+          </svg>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Calculator + Conditions -->
+  <section class="calculator">
+    <div class="container">
+      <div class="calc-inner">
+
+        <div class="calc-pitch">
+          <h2 data-ru="Без комиссии. Курс — как на рынке." data-en="Zero fees. The real rate."></h2>
+          <p class="calc-pitch-sub" data-ru="Банки берут 2–3% на переводах до €1000. Здесь это ноль — по среднерыночному курсу, без скрытых наценок." data-en="Banks charge 2–3% on transfers up to €1000. Here it's zero — at the mid-market rate, no hidden markups."></p>
+          <div class="cond-list">
+            <div class="cond-row">
+              <span class="cond-row-icon">🚫</span>
+              <span data-ru="Без комиссии" data-en="Zero fees"></span>
+            </div>
+            <div class="cond-row">
+              <span class="cond-row-icon">📊</span>
+              <span data-ru="Среднерыночный курс" data-en="Mid-market rate"></span>
+            </div>
+            <div class="cond-row">
+              <span class="cond-row-icon">🔒</span>
+              <span data-ru="До €1 000 за обмен" data-en="Up to €1,000 per exchange"></span>
+            </div>
+            <div class="cond-row">
+              <span class="cond-row-icon">⚡</span>
+              <span data-ru="~5 минут" data-en="~5 minutes"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-card">
+
+          <div class="direction-toggle">
+            <button class="dir-btn active" id="btnEurToRub">EUR → RUB</button>
+            <button class="dir-btn" id="btnRubToEur">RUB → EUR</button>
+          </div>
+
+          <div class="calc-field">
+            <span class="calc-label" data-ru="Вы отправляете" data-en="You send"></span>
+            <div class="calc-input-wrap">
+              <input type="number" id="calcInput" value="100" min="0" autocomplete="off">
+              <span class="field-currency" id="inputCurrency">EUR</span>
+            </div>
+          </div>
+
+          <div class="calc-field">
+            <span class="calc-label" data-ru="Вы получаете" data-en="You receive"></span>
+            <div class="calc-result-wrap">
+              <span id="resultAmount">8 841</span>
+              <span class="field-currency" id="outputCurrency">RUB</span>
+            </div>
+          </div>
+
+          <div class="calc-meta">
+            <span class="savings-line">
+              <span data-ru="Экономия против банка ≈ " data-en="Savings vs bank ≈ "></span><strong id="savingsAmount">€3.00</strong>
+            </span>
+            <span class="rate-line">
+              <span data-ru="Курс: " data-en="Rate: "></span>1 EUR = 88.41 RUB
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. How it works -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2 data-ru="Как это работает" data-en="How it works"></h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-icon">💬</span>
+          <h3 data-ru="Напишите боту" data-en="Message the bot"></h3>
+          <p data-ru="Укажите сумму и направление обмена" data-en="Enter the amount and exchange direction"></p>
+        </div>
+        <div class="step">
+          <span class="step-icon">🔄</span>
+          <h3 data-ru="Переведите деньги" data-en="Send the money"></h3>
+          <p data-ru="Переведите сумму на указанные реквизиты" data-en="Transfer to the provided bank details"></p>
+        </div>
+        <div class="step">
+          <span class="step-icon">✅</span>
+          <h3 data-ru="Получите перевод" data-en="Receive your funds"></h3>
+          <p data-ru="Деньги в нужной валюте придут в течение 5 минут" data-en="Your money in the target currency arrives within 5 minutes"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 5. Trust -->
+  <section class="trust">
+    <div class="container">
+      <div class="trust-counter">
+        <span class="counter-number">1 247</span>
+        <span class="counter-label" data-ru="успешных обменов" data-en="successful exchanges"></span>
+      </div>
+      <div class="reviews">
+        <div class="review">
+          <div class="review-header">
+            <span class="review-avatar">Д</span>
+            <strong>Даша</strong>
+          </div>
+          <p data-ru="Очень быстро и удобно! Теперь всегда пользуюсь только здесь 🙌" data-en="Super fast and easy! Always use this now 🙌"></p>
+        </div>
+        <div class="review">
+          <div class="review-header">
+            <span class="review-avatar">П</span>
+            <strong>Петя</strong>
+          </div>
+          <p data-ru="Очень много экономлю на переводах, для карманных расходов — самое то!" data-en="Saving so much on transfers, perfect for everyday expenses!"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Final CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2 data-ru="Попробуйте первый обмен" data-en="Try your first exchange"></h2>
+      <a href="https://t.me/your_bot" class="btn-primary" data-ru="Открыть в Telegram" data-en="Open in Telegram" target="_blank" rel="noopener"></a>
+      <div class="banks">
+        <span class="bank-tag">Revolut</span>
+        <span class="bank-tag">N26</span>
+        <span class="bank-tag">IBAN</span>
+        <span class="bank-sep">↔</span>
+        <span class="bank-tag">Тинькофф</span>
+        <span class="bank-tag">Сбер</span>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
