@@ -52,7 +52,10 @@ btnRubToEur.addEventListener('click', () => {
   calculate();
 });
 
-calcInput.addEventListener('input', calculate);
+calcInput.addEventListener('input', () => {
+  calcInput.value = calcInput.value.replace(/[^0-9.,]/g, '');
+  calculate();
+});
 
 function calculate() {
   const amount = Math.max(0, parseFloat(calcInput.value) || 0);
