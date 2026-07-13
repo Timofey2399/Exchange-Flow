@@ -1,7 +1,7 @@
 :root {
-  --accent: #CFB1F2;
-  --accent-hover: #b890ea;
-  --accent-light: #f7f0ff;
+  --accent: #7EC8A4;
+  --accent-hover: #5CAF8A;
+  --accent-light: #E8F6EF;
   --text: #1a1a2e;
   --text-secondary: #6b7280;
   --border: #e5e7eb;
@@ -108,7 +108,7 @@ header {
 .hero-visual svg {
   width: min(280px, 100%);
   height: auto;
-  filter: drop-shadow(0 24px 60px rgba(160, 100, 230, 0.28));
+  filter: drop-shadow(0 24px 60px rgba(50, 150, 100, 0.28));
 }
 
 /* ── Button ──────────────────────────────── */
@@ -199,7 +199,7 @@ header {
   background: #fff;
   border-radius: 24px;
   padding: 40px;
-  box-shadow: 0 8px 32px rgba(100, 60, 160, 0.18);
+  box-shadow: 0 8px 32px rgba(40, 120, 80, 0.16);
 }
 
 .direction-toggle {
