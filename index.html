@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>Exchange Flow - Portfolio Page</title>
+  <meta name="description" content="P2P-обмен EUR↔RUB без комиссии через Telegram. По рыночному курсу, до €1 000, ~5 минут.">
   <meta property="og:title" content="Exchange Flow - portfolio page">
   <meta property="og:description" content="Quick P2P exchange">
   <meta property="og:type" content="website">
@@ -39,7 +40,7 @@
         <div class="hero-text">
           <h1 data-ru="Меняйте евро на рубли без комиссии" data-en="Exchange EUR to RUB with zero fees"></h1>
           <p class="hero-sub" data-ru="P2P-переводы через Telegram — по рыночному курсу, без банковских наценок" data-en="P2P transfers via Telegram — at market rate, no bank markups"></p>
-          <a href="https://t.me/your_bot" class="btn-primary" data-ru="Открыть в Telegram" data-en="Open in Telegram" target="_blank" rel="noopener"></a>
+          <a href="#" class="btn-primary js-tg-btn" data-ru="Открыть в Telegram" data-en="Open in Telegram"></a>
         </div>
 
         <div class="hero-visual">
@@ -167,7 +168,7 @@
               <span data-ru="Экономия против банка ≈ " data-en="Savings vs bank ≈ "></span><strong id="savingsAmount">€3.00</strong>
             </span>
             <span class="rate-line">
-              <span data-ru="Курс: " data-en="Rate: "></span>1 EUR = 88.41 RUB
+              <span id="rateLabel" data-ru="Курс: " data-en="Rate: "></span><span id="rateValue">1 EUR = 88.41 RUB</span>
             </span>
           </div>
 
@@ -231,7 +232,7 @@
   <section class="final-cta">
     <div class="container">
       <h2 data-ru="Попробуйте первый обмен" data-en="Try your first exchange"></h2>
-      <a href="https://t.me/your_bot" class="btn-primary" data-ru="Открыть в Telegram" data-en="Open in Telegram" target="_blank" rel="noopener"></a>
+      <a href="#" class="btn-primary js-tg-btn" data-ru="Открыть в Telegram" data-en="Open in Telegram"></a>
       <div class="banks">
         <span class="bank-tag">Revolut</span>
         <span class="bank-tag">N26</span>

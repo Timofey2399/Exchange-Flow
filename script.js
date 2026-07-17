@@ -1,4 +1,4 @@
-const RATE = 88.41;          // 1 EUR = 88.41 RUB
+let RATE = 88.41;            // 1 EUR = 88.41 RUB (fallback)
 const BANK_FEE = 0.03;       // условная банковская комиссия 3%
 
 let currentLang = 'ru';
@@ -81,7 +81,42 @@ function formatEur(n) {
   return n.toLocaleString('ru-RU', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
+// ── Live rate ─────────────────────────────
+
+async function fetchRate() {
+  try {
+    const res = await fetch(
+      'https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/eur.json',
+      { signal: AbortSignal.timeout(4000) }
+    );
+    const data = await res.json();
+    RATE = data.eur.rub;
+    document.getElementById('rateValue').textContent = `1 EUR = ${RATE.toFixed(2)} RUB`;
+    calculate();
+  } catch {
+    // тихо используем fallback 88.41
+  }
+}
+
+// ── Toast ─────────────────────────────────
+
+document.querySelectorAll('.js-tg-btn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = '📚 Демо-проект, бот не подключён';
+    document.body.appendChild(toast);
+    requestAnimationFrame(() => toast.classList.add('show'));
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => toast.remove(), 300);
+    }, 2500);
+  });
+});
+
 // ── Init ──────────────────────────────────
 
 applyLanguage();
 calculate();
+fetchRate();
